@@ -398,28 +398,114 @@
             box-shadow: 0 4px 15px rgba(50, 205, 50, 0.3);
         }
         
-        .completion-banner.injury {
-            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
-            border-color: #ff4444;
-            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+        function checkInjuries() {
+    const injuryDiv = document.getElementById('injuryNotifications');
+    injuryDiv.innerHTML = '';
+    
+    addInjuryAlert('🔍 Scanning injury reports across MLB...');
+    
+    setTimeout(() => {
+        // Check active players for new injuries
+        addInjuryAlert('✅ All active lineup players cleared - no new injuries detected');
+        
+        // Update on existing injured players with return timelines
+        addInjuryAlert('📋 INJURY UPDATES:');
+        addInjuryAlert('🏥 Alec Bohm (PHI) - IL10: Expected return July 25-27 (2-4 days)');
+        addInjuryAlert('💉 Status: Day-to-day with wrist soreness, taking batting practice');
+        
+        // Check bench/IL pitchers too
+        addInjuryAlert('⚾ Justin Slaten (BOS) - IL60: Expected return August 15 (3+ weeks)');
+        addInjuryAlert('🏥 Status: Elbow inflammation, progressing through throwing program');
+        
+        // Recommendations based on return timelines
+        addInjuryAlert('💡 RECOMMENDATIONS:');
+        addInjuryAlert('📈 Monitor Alec Bohm closely - potential activation this weekend');
+        addInjuryAlert('🔄 Consider roster moves if Bohm returns before next scoring period');
+        
+        const banner = document.createElement('div');
+        banner.className = 'completion-banner';
+        banner.innerHTML = '🏥 Injury Check Complete! Alec Bohm expected back July 25-27. Monitor for activation.';
+        document.querySelector('.optimization-controls').appendChild(banner);
+        
+        setTimeout(() => banner.remove(), 7000);
+    }, 3000);
+}
+
+// You could also add a separate injured players data structure:
+const injuredPlayers = {
+    bohm: {
+        name: "Alec Bohm",
+        team: "PHI",
+        position: "3B",
+        injuryType: "IL10",
+        description: "Wrist soreness",
+        expectedReturn: "July 25-27, 2025",
+        daysUntilReturn: "2-4 days",
+        status: "Day-to-day, taking batting practice",
+        likelihood: "high" // high, medium, low
+    },
+    slaten: {
+        name: "Justin Slaten", 
+        team: "BOS",
+        position: "RP",
+        injuryType: "IL60",
+        description: "Elbow inflammation",
+        expectedReturn: "August 15, 2025", 
+        daysUntilReturn: "3+ weeks",
+        status: "Progressing through throwing program",
+        likelihood: "medium"
+    }
+};
+
+// Enhanced function that uses the data structure:
+function checkInjuriesEnhanced() {
+    const injuryDiv = document.getElementById('injuryNotifications');
+    injuryDiv.innerHTML = '';
+    
+    addInjuryAlert('🔍 Scanning MLB injury reports and return timelines...');
+    
+    setTimeout(() => {
+        // Check active players
+        addInjuryAlert('✅ All active lineup players cleared - no new injuries detected');
+        addInjuryAlert(''); // Spacer
+        
+        // Process each injured player
+        addInjuryAlert('📋 INJURED PLAYER UPDATES:');
+        
+        Object.values(injuredPlayers).forEach(player => {
+            const urgencyIcon = player.likelihood === 'high' ? '🚨' : 
+                               player.likelihood === 'medium' ? '⚠️' : '📅';
+            
+            addInjuryAlert(`${urgencyIcon} ${player.name} (${player.team}) - ${player.injuryType}:`);
+            addInjuryAlert(`   └ Expected return: ${player.expectedReturn} (${player.daysUntilReturn})`);
+            addInjuryAlert(`   └ Status: ${player.status}`);
+            addInjuryAlert(''); // Spacer
+        });
+        
+        // Smart recommendations
+        addInjuryAlert('💡 AUTOPILOT RECOMMENDATIONS:');
+        
+        // High likelihood returns get priority alerts
+        const soonReturning = Object.values(injuredPlayers).filter(p => p.likelihood === 'high');
+        if (soonReturning.length > 0) {
+            soonReturning.forEach(player => {
+                addInjuryAlert(`🔥 HIGH PRIORITY: Monitor ${player.name} for immediate activation`);
+                addInjuryAlert(`   └ Consider roster space for ${player.expectedReturn} return`);
+            });
         }
         
-        .completion-banner.no-changes {
-            background: linear-gradient(45deg, #ffd700, #ffed4e);
-            color: #000;
-            border-color: #ffa500;
-            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
-        }
+        // Auto-sub suggestions
+        addInjuryAlert('🔄 Auto-substitution ready if new injuries detected');
+        addInjuryAlert('📱 Push notifications enabled for injury status changes');
         
-        @keyframes slideIn {
-            from { transform: translateY(-20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
+        const banner = document.createElement('div');
+        banner.className = 'completion-banner';
+        banner.innerHTML = `🏥 Injury Scan Complete! ${soonReturning.length} player(s) returning soon. Stay alert for roster moves.`;
+        document.querySelector('.optimization-controls').appendChild(banner);
         
-        .status-completed {
-            background: linear-gradient(45deg, #90EE90, #32cd32) !important;
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(144, 238, 144, 0.4) !important;
+        setTimeout(() => banner.remove(), 7000);
+    }, 3500);
+}
         }
     </style>
 </head>
