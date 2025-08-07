@@ -1,0 +1,117 @@
+/* Main Styles - Fantasy Baseball AUTOPILOT */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    margin: 0;
+    padding: 40px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    text-align: center;
+    max-width: 800px;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.autopilot {
+    color: #ffd700;
+    font-weight: bold;
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+/* Feature Box */
+.feature-box {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    backdrop-filter: blur(10px);
+}
+
+/* Section Layouts */
+.lineup-section, .pitching-section {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 25px;
+    margin: 30px 0;
+    backdrop-filter: blur(10px);
+}
+
+/* Control Buttons */
+.optimization-controls {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.optimize-button {
+    background: linear-gradient(45deg, #ffd700, #ffed4e);
+    color: #000;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+    margin: 0 10px;
+}
+
+.optimize-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+}
+
+.pitcher-optimize-button {
+    background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+}
+
+.pitcher-optimize-button:hover {
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+}
+
+/* Status and Analysis */
+.autopilot-status {
+    background: rgba(255, 215, 0, 0.1);
+    border: 1px solid #ffd700;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.autopilot-status p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+.coming-soon {
+    background: rgba(255, 215, 0, 0.2);
+    border: 2px solid #ffd700;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+.espn-source {
+    font-size: 0.8em;
+    color: #ccc;
+    margin-top: 10px;
+    font-style: italic;
+}
