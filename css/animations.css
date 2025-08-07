@@ -1,0 +1,73 @@
+/* Animation Styles */
+
+/* Player Swap Animation */
+.player-swapped {
+    background: rgba(255, 215, 0, 0.3) !important;
+    border: 2px solid #ffd700 !important;
+    animation: highlight 2s ease-in-out;
+}
+
+@keyframes highlight {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+/* Injury Alert Animation */
+.injury-alert {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+/* Player Status Animations */
+.player-injured {
+    background: rgba(255, 68, 68, 0.3) !important;
+    border: 2px solid #ff4444 !important;
+}
+
+.player-subbed-in {
+    background: rgba(68, 255, 68, 0.3) !important;
+    border: 2px solid #44ff44 !important;
+}
+
+/* Completion Banner */
+.completion-banner {
+    background: linear-gradient(45deg, #32cd32, #228b22);
+    color: white;
+    border: 2px solid #90EE90;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    animation: slideIn 0.5s ease-out;
+    box-shadow: 0 4px 15px rgba(50, 205, 50, 0.3);
+}
+
+.completion-banner.injury {
+    background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+    border-color: #ff4444;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.completion-banner.no-changes {
+    background: linear-gradient(45deg, #ffd700, #ffed4e);
+    color: #000;
+    border-color: #ffa500;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.status-completed {
+    background: linear-gradient(45deg, #90EE90, #32cd32) !important;
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(144, 238, 144, 0.4) !important;
+}
