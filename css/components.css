@@ -1,0 +1,225 @@
+/* Component Styles - Tables, Cards, Status Elements */
+
+/* Table Layouts */
+.lineup-table {
+    display: grid;
+    grid-template-columns: 50px 160px 50px 80px 80px 60px 80px;
+    gap: 8px;
+    margin: 20px 0;
+    font-size: 0.85em;
+}
+
+.bench-table {
+    display: grid;
+    grid-template-columns: 160px 50px 50px 80px 80px 60px 80px;
+    gap: 8px;
+    margin: 10px 0;
+    font-size: 0.8em;
+}
+
+.pitcher-table {
+    display: grid;
+    grid-template-columns: 50px 160px 50px 80px 60px 80px 80px 80px;
+    gap: 8px;
+    margin: 20px 0;
+    font-size: 0.85em;
+}
+
+/* Table Headers */
+.lineup-header, .pitcher-header {
+    display: contents;
+    font-weight: bold;
+    color: #ffd700;
+}
+
+/* Table Rows */
+.lineup-row, .pitcher-row {
+    display: contents;
+}
+
+.lineup-row > span, .pitcher-row > span {
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.bench-row {
+    display: contents;
+}
+
+.bench-row > span {
+    padding: 6px;
+    background: rgba(255, 165, 0, 0.1);
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* Cell Specific Styles */
+.position {
+    font-weight: bold;
+    background: rgba(255, 215, 0, 0.2) !important;
+}
+
+.player {
+    text-align: left !important;
+    font-weight: 500;
+}
+
+.split-ops {
+    font-weight: bold;
+    color: #90EE90;
+}
+
+.pitcher-ops {
+    font-weight: bold;
+    color: #90EE90;
+    text-align: center;
+}
+
+.pitcher-hand {
+    font-size: 0.8em;
+    color: #ccc;
+}
+
+/* Status Indicators */
+.status.active {
+    background: rgba(0, 255, 0, 0.2) !important;
+    color: #90EE90;
+}
+
+.status.bench {
+    background: rgba(255, 165, 0, 0.2) !important;
+    color: #FFA500;
+}
+
+.status.injured {
+    background: rgba(255, 0, 0, 0.2) !important;
+    color: #FF6B6B;
+}
+
+/* Scoring Classes */
+.steal-score {
+    font-weight: bold;
+    text-align: center;
+}
+
+.steal-score.good {
+    color: #90EE90;
+}
+
+.steal-score.average {
+    color: #ffd700;
+}
+
+.steal-score.poor {
+    color: #ff6b6b;
+}
+
+.espn-rank {
+    font-weight: bold;
+}
+
+.espn-rank.good {
+    color: #90EE90;
+}
+
+.espn-rank.average {
+    color: #ffd700;
+}
+
+.espn-rank.poor {
+    color: #ff6b6b;
+}
+
+/* Recommendations */
+.recommendation {
+    font-weight: bold;
+}
+
+.recommendation.start {
+    color: #90EE90;
+}
+
+.recommendation.bench {
+    color: #FFA500;
+}
+
+.recommendation.consider {
+    color: #ffd700;
+}
+
+/* Bench and Injured Sections */
+.bench-section, .injured-section {
+    margin: 15px 0;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}
+
+.bench-section h4, .injured-section h4 {
+    margin: 0 0 10px 0;
+    color: #ffd700;
+    font-size: 0.9em;
+}
+
+.bench-players, .injured-players {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.bench-player, .injured-player {
+    background: rgba(255, 165, 0, 0.2);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+}
+
+/* Log Components */
+.optimization-log {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid #ffd700;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 15px 0;
+    text-align: left;
+    font-family: monospace;
+    font-size: 0.9em;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.pitcher-decision-log {
+    background: rgba(255, 107, 107, 0.1);
+    border: 1px solid #ff6b6b;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 15px 0;
+    text-align: left;
+    font-family: monospace;
+    font-size: 0.9em;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.injury-notifications {
+    background: rgba(255, 68, 68, 0.1);
+    border: 2px solid #ff4444;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 15px 0;
+    text-align: left;
+    font-family: monospace;
+    font-size: 0.9em;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.injury-alert {
+    background: rgba(255, 68, 68, 0.2);
+    border: 1px solid #ff4444;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px 0;
+}
